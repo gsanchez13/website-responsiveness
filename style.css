@@ -33,7 +33,6 @@ html {
 }
 
 .content {
-  padding: 15px;
   width: 70%;
   display: inline-block;
   font-size: 16px;
@@ -50,6 +49,7 @@ html {
   vertical-align: top;
   display: inline-block;
   background-color: white;
+  text-align: center;
 }
 .sidebar h2 {
   font-size: 20px;
@@ -81,4 +81,41 @@ html {
   display: flex;
   justify-content: space-around;
   padding-left: 0;
+}
+@media screen and (min-width: 500px) {
+  .content:not(.header){
+    display: grid;
+    grid-template-columns: 2fr 2fr;
+  }
+  .content > img {
+    width: 90%;
+    grid-column: 1/2;
+  }
+  .content > p {
+    padding: 20px;
+    display: unset;
+    grid-column: 2/3;
+    width: 100%
+  }
+  .sidebar {
+    text-align: unset;
+    width: 100%;
+    display: flex;
+    flex-flow: column;
+    justify-content: space-evenly;
+    padding: 30px;
+  }
+  .sidebar-card {
+    padding: 10px;
+    display: flex;
+    flex-flow: row;
+    width: 70%;
+  }
+  .sidebar > img {
+    width: 30%
+  }
+  .sidebar-card-caption {
+    font-size: 15px;
+    padding: 15px;
+  }
 }
